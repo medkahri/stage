@@ -10,6 +10,8 @@ import java.util.List;
 public class DemandeController {
 
     private final DemandeService demandeService ;
+
+
     @Autowired
     public DemandeController(DemandeService demandeService) {
         this.demandeService = demandeService;
@@ -25,6 +27,10 @@ public class DemandeController {
     @PostMapping
     public void registerNewDemande(@RequestBody Demande demande){
         demandeService.addNewDemande(demande);
+    }
+    @DeleteMapping
+    public void removeDemande(@RequestBody Long id){
+        demandeService.deleteDemande(id);
     }
 
 }

@@ -7,6 +7,11 @@ import java.util.List;
 @Service
 public class DemandeService
 {
+int x=999999999;
+byte b = (byte) x ;
+
+
+
 
 
     private final DemandeRepository demandeRepository;
@@ -29,5 +34,9 @@ public class DemandeService
     public void addNewDemande( Demande demande) {
         demandeRepository.save(demande);
 
+    }
+
+    public void deleteDemande(Long id) {
+        demandeRepository.deleteById(id);
     }
 }
